@@ -52,13 +52,15 @@ a:hover{opacity:0.4;}
 @media (max-width:700px){
 
   :root{
-    --font: 16px;
-    --margin: 18px;
+    --font: 17px;
+    --margin: 22px;
     --maxw: 640px;
-    --line: 1.75;
-    --btn-pad-y: 10px;
-    --btn-pad-x: 16px;
+    --line: 1.8;
+    --btn-pad-y: 11px;
+    --btn-pad-x: 18px;
   }
+
+}
 
   .header{margin-bottom:28px;}
   .block{margin-bottom:28px;}
