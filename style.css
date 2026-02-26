@@ -1,11 +1,20 @@
+:root{
+  --font: 14px;
+  --margin: 60px;
+  --maxw: 520px;
+  --line: 1.65;
+  --btn-pad-y: 7px;
+  --btn-pad-x: 13px;
+}
+
 body{
   background:#ffffff;
   color:#000000;
   font-family:"Courier New", Courier, monospace;
-  font-size:14px;
-  margin:60px;
-  max-width:520px;
-  line-height:1.65;
+  font-size: var(--font);
+  margin: var(--margin);
+  max-width: var(--maxw);
+  line-height: var(--line);
 }
 
 a{color:#000;text-decoration:none;}
@@ -26,14 +35,34 @@ a:hover{opacity:0.4;}
 
 .button{
   display:inline-block;
-  padding:7px 13px;
+  padding: var(--btn-pad-y) var(--btn-pad-x);
   border:1px solid #000;
   text-decoration:none;
   color:#000;
   letter-spacing:0.5px;
 }
+
 .button:hover{
   background:#000;
   color:#fff;
   opacity:1;
+}
+
+/* MOBILE */
+@media (max-width:700px){
+
+  :root{
+    --font: 16px;
+    --margin: 18px;
+    --maxw: 640px;
+    --line: 1.75;
+    --btn-pad-y: 10px;
+    --btn-pad-x: 16px;
+  }
+
+  .header{margin-bottom:28px;}
+  .block{margin-bottom:28px;}
+  .tracklist{margin-bottom:28px;}
+  .hr{margin:22px 0;}
+
 }
