@@ -1,0 +1,39 @@
+body{
+  background:#ffffff;
+  color:#000000;
+  font-family:"Courier New", Courier, monospace;
+  font-size:14px;
+  margin:60px;
+  max-width:520px;
+  line-height:1.65;
+}
+
+a{color:#000;text-decoration:none;}
+a:hover{opacity:0.4;}
+
+.header{margin-bottom:40px;}
+.entry{margin-bottom:20px;}
+.block{margin-bottom:40px;}
+.tracklist{margin-bottom:40px;}
+.small{opacity:0.75;}
+
+.hr{
+  height:1px;
+  background:#000;
+  opacity:0.15;
+  margin:30px 0;
+}
+
+.button{
+  display:inline-block;
+  padding:7px 13px;
+  border:1px solid #000;
+  text-decoration:none;
+  color:#000;
+  letter-spacing:0.5px;
+}
+.button:hover{
+  background:#000;
+  color:#fff;
+  opacity:1;
+}
