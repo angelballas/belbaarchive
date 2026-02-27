@@ -68,13 +68,14 @@ a:hover{opacity:0.4;}
   .hr{margin:22px 0;}
 
 }
-
-/* Restricted entries */
-.entry.restricted {
-  opacity: 0.25;
+.entry {
+  margin-bottom: 22px;
 }
 
-/* Μην αλλάζουν στο hover */
+.entry.restricted {
+  opacity: 0.18;
+}
+
 .entry.restricted:hover {
-  opacity: 0.25;
+  opacity: 0.35;
 }
