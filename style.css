@@ -68,3 +68,7 @@ a:hover{opacity:0.4;}
   .hr{margin:22px 0;}
 
 }
+
+.entry.restricted{
+    opacity:0.55;
+}
