@@ -69,6 +69,8 @@ a:hover{opacity:0.4;}
 
 }
 
-.entry.restricted{
-    opacity:0.05;
+/* FORCE restricted look */
+.entry.restricted,
+.entry.restricted * {
+  opacity: 0.28 !important;
 }
