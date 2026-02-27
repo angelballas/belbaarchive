@@ -69,8 +69,12 @@ a:hover{opacity:0.4;}
 
 }
 
-/* FORCE restricted look */
-.entry.restricted,
-.entry.restricted * {
-  opacity: 0.28 !important;
+/* Restricted entries */
+.entry.restricted {
+  opacity: 0.25;
+}
+
+/* Μην αλλάζουν στο hover */
+.entry.restricted:hover {
+  opacity: 0.25;
 }
