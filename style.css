@@ -35,32 +35,37 @@ a:hover{
 }
 
 .header-subtitle{
-  font-size:14px;
+  font-size:13px;
   line-height:1.5;
+  opacity:0.8;
 }
 
 .entries{
   width:100%;
 }
 
+/* ENTRY LAYOUT */
+
 .entry{
   display:grid;
-  grid-template-columns: 140px 1fr 70px;
-  column-gap:20px;
-  row-gap:0;
-  padding:8px 0;
+  grid-template-columns: 110px 1fr 50px;
+  column-gap:18px;
+  padding:6px 0;
   align-items:baseline;
-  margin-bottom:0;
 }
 
-.entry-number,
-.entry-title,
-.entry-year{
+.entry-number{
   white-space:nowrap;
 }
 
 .entry-title{
-  white-space:normal;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.entry-year{
+  text-align:right;
 }
 
 .entry.restricted{
@@ -70,6 +75,8 @@ a:hover{
 .entry.restricted:hover{
   opacity:0.35;
 }
+
+/* TEXT BLOCKS */
 
 .block{
   margin-bottom:40px;
@@ -83,15 +90,23 @@ a:hover{
   opacity:0.75;
 }
 
-.footer-note,
-.contact{
+/* FOOTER */
+
+.footer-note{
   margin:18px 0;
   line-height:1.6;
+  opacity:0.7;
+}
+
+.contact{
+  margin:18px 0;
 }
 
 .contact a{
   text-decoration:none;
 }
+
+/* DIVIDER */
 
 .hr{
   height:1px;
@@ -99,6 +114,8 @@ a:hover{
   opacity:0.15;
   margin:30px 0;
 }
+
+/* BUTTON */
 
 .button{
   display:inline-block;
@@ -116,6 +133,7 @@ a:hover{
 }
 
 /* MOBILE */
+
 @media (max-width:700px){
 
   :root{
@@ -136,18 +154,12 @@ a:hover{
   }
 
   .header-subtitle{
-    font-size:15px;
-    line-height:1.6;
+    font-size:14px;
   }
 
   .entry{
-    grid-template-columns: 1fr;
-    row-gap:2px;
-    padding:10px 0;
-  }
-
-  .entry-year{
-    opacity:0.7;
+    grid-template-columns: 95px 1fr 40px;
+    column-gap:12px;
   }
 
   .block{
