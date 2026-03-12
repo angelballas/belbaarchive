@@ -238,3 +238,21 @@ a:hover{
     opacity:0;
   }
 }
+
+.enter-link{
+  display:inline-block;
+  text-decoration:none;
+  margin-top:40px;
+  letter-spacing:1px;
+}
+
+.enter-link::after{
+  content:" ▮";
+  animation:blink 1s steps(1) infinite;
+}
+
+@keyframes blink{
+  50%{
+    opacity:0;
+  }
+}
