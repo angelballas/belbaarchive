@@ -76,10 +76,11 @@ a:hover{
   white-space:nowrap;
 }
 
-.entry-title{
+.entry-year{
+  text-align:right;
   white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+  width: var(--entry-col-3);
+  justify-self:end;
 }
 
 .entry-year{
