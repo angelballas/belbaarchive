@@ -163,11 +163,11 @@ a:hover{
     padding:7px 0;
   }
 
-  .entry-title{
-    white-space:normal;
-    overflow:visible;
-    text-overflow:clip;
-  }
+.entry-title{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
   .block{
     margin-bottom:28px;
