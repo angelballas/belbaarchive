@@ -239,15 +239,17 @@ a:hover{
   }
 }
 
-.enter-link{
-  display:inline-block;
+..nav-link{
   text-decoration:none;
-  margin-top:40px;
-  letter-spacing:1px;
 }
 
-.enter-link::after{
+.nav-link::after{
   content:" ▮";
+  opacity:0;
+}
+
+.nav-link:hover::after{
+  opacity:1;
   animation:blink 1s steps(1) infinite;
 }
 
@@ -257,13 +259,18 @@ a:hover{
   }
 }
 
-.nav-link{
+.entry-title a{
   text-decoration:none;
 }
 
-.nav-link::after{
-  content:" ▮";
-  animation:blink 1s steps(1) infinite;
+.entry-title a::after{
+  content:" →";
+  opacity:0;
+}
+
+.entry-title a:hover::after{
+  opacity:1;
+
 }
 
 @keyframes blink{
