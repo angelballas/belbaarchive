@@ -9,6 +9,8 @@
   --entry-gap: 18px;
 }
 
+/* BASE */
+
 body{
   background:#ffffff;
   color:#000000;
@@ -28,6 +30,8 @@ a:hover{
   opacity:1;
 }
 
+/* HEADER */
+
 .header{
   margin-bottom:40px;
 }
@@ -41,6 +45,8 @@ a:hover{
   line-height:1.5;
   opacity:0.8;
 }
+
+/* DIVIDER */
 
 .hr{
   height:1px;
@@ -58,7 +64,7 @@ a:hover{
 .entries-head,
 .entry{
   display:grid;
-  grid-template-columns:var(--entry-col-1) minmax(0, 1fr) var(--entry-col-3);
+  grid-template-columns:var(--entry-col-1) minmax(0,1fr) var(--entry-col-3);
   column-gap:var(--entry-gap);
   align-items:baseline;
 }
@@ -70,14 +76,18 @@ a:hover{
   margin-bottom:18px;
 }
 
+.entries-head div:last-child{
+  justify-self:end;
+}
+
 .entry{
   padding:6px 0;
   transition:opacity 0.15s ease;
 }
 
 .entry-number{
-  white-space:nowrap;
   text-align:left;
+  white-space:nowrap;
   opacity:0.6;
 }
 
@@ -85,12 +95,10 @@ a:hover{
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
-  opacity:1;
 }
 
 .entry-title a{
   text-decoration:none;
-  opacity:1;
 }
 
 .entry-title a::after{
@@ -104,9 +112,8 @@ a:hover{
 
 .entry-year{
   text-align:right;
-  white-space:nowrap;
-  width:var(--entry-col-3);
   justify-self:end;
+  white-space:nowrap;
   opacity:0.45;
 }
 
@@ -150,7 +157,6 @@ a:hover{
 
 .archive-note a{
   color:#000;
-  text-decoration:none;
 }
 
 /* NAV LINKS */
@@ -175,7 +181,7 @@ a:hover{
   }
 }
 
-/* GENERAL BLOCKS */
+/* ENTRY PAGES */
 
 .block{
   margin-bottom:40px;
@@ -189,7 +195,7 @@ a:hover{
   opacity:0.75;
 }
 
-/* BUTTONS (αν τα χρειαστείς κάπου αλλού) */
+/* OPTIONAL BUTTON STYLE */
 
 .button{
   display:inline-block;
@@ -203,7 +209,6 @@ a:hover{
 .button:hover{
   background:#000;
   color:#fff;
-  opacity:1;
 }
 
 /* MOBILE */
