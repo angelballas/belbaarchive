@@ -13,10 +13,10 @@ body{
   background:#ffffff;
   color:#000000;
   font-family:"Courier New", Courier, monospace;
-  font-size: var(--font);
-  margin: var(--margin);
-  max-width: var(--maxw);
-  line-height: var(--line);
+  font-size:var(--font);
+  margin:var(--margin);
+  max-width:var(--maxw);
+  line-height:var(--line);
 }
 
 a{
@@ -25,7 +25,7 @@ a{
 }
 
 a:hover{
-  opacity:0.4;
+  opacity:1;
 }
 
 .header{
@@ -49,6 +49,8 @@ a:hover{
   margin:30px 0;
 }
 
+/* ARCHIVE INDEX */
+
 .entries{
   width:100%;
 }
@@ -56,8 +58,8 @@ a:hover{
 .entries-head,
 .entry{
   display:grid;
-  grid-template-columns: var(--entry-col-1) 1fr var(--entry-col-3);
-  column-gap: var(--entry-gap);
+  grid-template-columns:var(--entry-col-1) minmax(0, 1fr) var(--entry-col-3);
+  column-gap:var(--entry-gap);
   align-items:baseline;
 }
 
@@ -70,25 +72,55 @@ a:hover{
 
 .entry{
   padding:6px 0;
+  transition:opacity 0.15s ease;
 }
 
 .entry-number{
   white-space:nowrap;
+  text-align:left;
+  opacity:0.6;
+}
+
+.entry-title{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  opacity:1;
+}
+
+.entry-title a{
+  text-decoration:none;
+  opacity:1;
+}
+
+.entry-title a::after{
+  content:" →";
+  opacity:0;
+}
+
+.entry-title a:hover::after{
+  opacity:1;
 }
 
 .entry-year{
   text-align:right;
   white-space:nowrap;
-  width: var(--entry-col-3);
+  width:var(--entry-col-3);
   justify-self:end;
+  opacity:0.45;
 }
 
-.entry-year{
-  text-align:right;
-  white-space:nowrap;
+/* CATALOG HOVER */
+
+.entries:hover .entry{
+  opacity:0.35;
 }
 
-/* πιο μυστηριώδες restricted */
+.entries:hover .entry:hover{
+  opacity:1;
+}
+
+/* RESTRICTED */
 
 .entry.restricted{
   opacity:0.28;
@@ -99,9 +131,15 @@ a:hover{
   opacity:0.7;
 }
 
+.entry.restricted .entry-year{
+  opacity:0.35;
+}
+
 .entry.restricted:hover{
   opacity:0.45;
 }
+
+/* ARCHIVE NOTE */
 
 .archive-note{
   font-size:12px;
@@ -112,7 +150,32 @@ a:hover{
 
 .archive-note a{
   color:#000;
+  text-decoration:none;
 }
+
+/* NAV LINKS */
+
+.nav-link{
+  text-decoration:none;
+}
+
+.nav-link::after{
+  content:" ▮";
+  opacity:0;
+}
+
+.nav-link:hover::after{
+  opacity:1;
+  animation:blink 1s steps(1) infinite;
+}
+
+@keyframes blink{
+  50%{
+    opacity:0;
+  }
+}
+
+/* GENERAL BLOCKS */
 
 .block{
   margin-bottom:40px;
@@ -124,6 +187,23 @@ a:hover{
 
 .small{
   opacity:0.75;
+}
+
+/* BUTTONS (αν τα χρειαστείς κάπου αλλού) */
+
+.button{
+  display:inline-block;
+  padding:7px 13px;
+  border:1px solid #000;
+  color:#000;
+  text-decoration:none;
+  letter-spacing:0.5px;
+}
+
+.button:hover{
+  background:#000;
+  color:#fff;
+  opacity:1;
 }
 
 /* MOBILE */
@@ -163,11 +243,15 @@ a:hover{
     padding:7px 0;
   }
 
-.entry-title{
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+  .entry-title{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .archive-note{
+    font-size:11px;
+  }
 
   .block{
     margin-bottom:28px;
@@ -180,156 +264,4 @@ a:hover{
   .hr{
     margin:22px 0;
   }
-
-  .archive-note{
-    font-size:11px;
-  }
-
-}
-
-.nav{
-  display:inline-block;
-  text-decoration:none;
-  border-bottom:1px solid transparent;
-  padding-bottom:2px;
-  opacity:0.7;
-  transition:opacity 0.2s ease;
-}
-
-.nav:hover{
-  opacity:1;
-  border-bottom:1px solid #000;
-}
-
-.nav::after{
-  content:"";
-}
-
-.nav:hover::after{
-  content:" ▮";
-}
-
-.nav{
-  display:inline-block;
-  text-decoration:none;
-  border-bottom:1px solid transparent;
-  padding-bottom:2px;
-  opacity:0.7;
-  transition:opacity 0.2s ease;
-}
-
-.nav:hover{
-  opacity:1;
-  border-bottom:1px solid #000;
-}
-
-.nav::after{
-  content:" ▮";
-  opacity:0;
-}
-
-.nav:hover::after{
-  opacity:1;
-  animation:blink 1s steps(1) infinite;
-}
-
-@keyframes blink{
-  50%{
-    opacity:0;
-  }
-}
-
-..nav-link{
-  text-decoration:none;
-}
-
-.nav-link::after{
-  content:" ▮";
-  opacity:0;
-}
-
-.nav-link:hover::after{
-  opacity:1;
-  animation:blink 1s steps(1) infinite;
-}
-
-@keyframes blink{
-  50%{
-    opacity:0;
-  }
-}
-
-.entry-title a{
-  text-decoration:none;
-}
-
-.entry-title a::after{
-  content:" →";
-  opacity:0;
-}
-
-.entry-title a:hover::after{
-  opacity:1;
-
-}
-
-@keyframes blink{
-  50%{
-    opacity:0;
-  }
-}
-
-.entry-title a{
-  text-decoration:none;
-}
-
-.entry-title a::after{
-  content:" →";
-  opacity:0;
-}
-
-.entry-title a:hover::after{
-  opacity:1;
-}
-.entry{
-  transition:opacity 0.15s ease;
-}
-
-.entry:hover{
-  opacity:1;
-}
-
-.entries:hover .entry{
-  opacity:0.35;
-}
-
-.entries:hover .entry:hover{
-  opacity:1;
-}
-
-.entry-title{
-  white-space:nowrap;
-}
-
-.entries{
-  width:100%;
-}
-
-.entry{
-  display:grid;
-  grid-template-columns:80px 1fr 80px;
-  align-items:baseline;
-  margin-bottom:18px;
-}
-
-.entry-number{
-  text-align:left;
-}
-
-.entry-title{
-  white-space:nowrap;
-}
-
-.entry-year{
-  text-align:right;
 }
