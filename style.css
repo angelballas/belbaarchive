@@ -1,10 +1,13 @@
 :root{
   --font: 14px;
   --margin: 60px;
-  --maxw: 520px;
-  --line: 1.65;
+  --maxw: 760px;
+  --line: 1.45;
   --btn-pad-y: 7px;
   --btn-pad-x: 13px;
+  --entry-col-1: 70px;
+  --entry-col-3: 60px;
+  --entry-gap: 18px;
 }
 
 body{
@@ -44,14 +47,22 @@ a:hover{
   width:100%;
 }
 
-/* ENTRY LAYOUT */
-
+.entries-head,
 .entry{
   display:grid;
-  grid-template-columns: 110px 1fr 50px;
-  column-gap:18px;
-  padding:6px 0;
+  grid-template-columns: var(--entry-col-1) 1fr var(--entry-col-3);
+  column-gap: var(--entry-gap);
   align-items:baseline;
+}
+
+.entries-head{
+  font-size:12px;
+  opacity:0.45;
+  margin-bottom:18px;
+}
+
+.entry{
+  padding:6px 0;
 }
 
 .entry-number{
@@ -66,17 +77,16 @@ a:hover{
 
 .entry-year{
   text-align:right;
+  white-space:nowrap;
 }
 
 .entry.restricted{
-  opacity:0.18;
+  opacity:0.28;
 }
 
 .entry.restricted:hover{
-  opacity:0.35;
+  opacity:0.4;
 }
-
-/* TEXT BLOCKS */
 
 .block{
   margin-bottom:40px;
@@ -90,23 +100,17 @@ a:hover{
   opacity:0.75;
 }
 
-/* FOOTER */
-
-.footer-note{
-  margin:18px 0;
+.archive-note{
+  font-size:12px;
+  opacity:0.55;
+  margin-top:30px;
   line-height:1.6;
-  opacity:0.7;
 }
 
-.contact{
-  margin:18px 0;
-}
-
-.contact a{
+.archive-note a{
+  color:#000;
   text-decoration:none;
 }
-
-/* DIVIDER */
 
 .hr{
   height:1px;
@@ -114,8 +118,6 @@ a:hover{
   opacity:0.15;
   margin:30px 0;
 }
-
-/* BUTTON */
 
 .button{
   display:inline-block;
@@ -133,7 +135,6 @@ a:hover{
 }
 
 /* MOBILE */
-
 @media (max-width:700px){
 
   :root{
@@ -143,6 +144,9 @@ a:hover{
     --line: 1.8;
     --btn-pad-y: 11px;
     --btn-pad-x: 18px;
+    --entry-col-1: 58px;
+    --entry-col-3: 46px;
+    --entry-gap: 12px;
   }
 
   .header{
@@ -155,11 +159,22 @@ a:hover{
 
   .header-subtitle{
     font-size:14px;
+    line-height:1.6;
+  }
+
+  .entries-head{
+    font-size:11px;
+    margin-bottom:14px;
   }
 
   .entry{
-    grid-template-columns: 95px 1fr 40px;
-    column-gap:12px;
+    padding:7px 0;
+  }
+
+  .entry-title{
+    white-space:normal;
+    overflow:visible;
+    text-overflow:clip;
   }
 
   .block{
@@ -174,17 +189,7 @@ a:hover{
     margin:22px 0;
   }
 
-}
-.archive-note{
-  font-size:12px;
-  opacity:0.55;
-  margin-top:30px;
-}
-
-.entries-head{
-  display:grid;
-  grid-template-columns:90px 1fr 60px;
-  font-size:12px;
-  opacity:0.45;
-  margin-bottom:18px;
+  .archive-note{
+    font-size:11px;
+  }
 }
