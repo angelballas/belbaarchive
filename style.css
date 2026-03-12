@@ -256,3 +256,18 @@ a:hover{
     opacity:0;
   }
 }
+
+.nav-link{
+  text-decoration:none;
+}
+
+.nav-link::after{
+  content:" ▮";
+  animation:blink 1s steps(1) infinite;
+}
+
+@keyframes blink{
+  50%{
+    opacity:0;
+  }
+}
