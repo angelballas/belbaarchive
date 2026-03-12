@@ -186,3 +186,17 @@ a:hover{
   }
 
 }
+
+.nav{
+  display:inline-block;
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  padding-bottom:2px;
+  opacity:0.7;
+  transition:opacity 0.2s ease;
+}
+
+.nav:hover{
+  opacity:1;
+  border-bottom:1px solid #000;
+}
