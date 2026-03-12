@@ -180,3 +180,11 @@ a:hover{
   opacity:0.55;
   margin-top:30px;
 }
+
+.entries-head{
+  display:grid;
+  grid-template-columns:90px 1fr 60px;
+  font-size:12px;
+  opacity:0.45;
+  margin-bottom:18px;
+}
