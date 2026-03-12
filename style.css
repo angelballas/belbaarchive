@@ -271,3 +271,16 @@ a:hover{
     opacity:0;
   }
 }
+
+.entry-title a{
+  text-decoration:none;
+}
+
+.entry-title a::after{
+  content:" →";
+  opacity:0;
+}
+
+.entry-title a:hover::after{
+  opacity:1;
+}
