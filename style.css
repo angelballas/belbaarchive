@@ -3,8 +3,7 @@
   --margin: 60px;
   --maxw: 760px;
   --line: 1.45;
-  --btn-pad-y: 7px;
-  --btn-pad-x: 13px;
+
   --entry-col-1: 70px;
   --entry-col-3: 60px;
   --entry-gap: 18px;
@@ -43,6 +42,13 @@ a:hover{
   opacity:0.8;
 }
 
+.hr{
+  height:1px;
+  background:#000;
+  opacity:0.15;
+  margin:30px 0;
+}
+
 .entries{
   width:100%;
 }
@@ -58,6 +64,7 @@ a:hover{
 .entries-head{
   font-size:12px;
   opacity:0.45;
+  letter-spacing:0.06em;
   margin-bottom:18px;
 }
 
@@ -80,12 +87,30 @@ a:hover{
   white-space:nowrap;
 }
 
+/* πιο μυστηριώδες restricted */
+
 .entry.restricted{
   opacity:0.28;
+  letter-spacing:0.05em;
+}
+
+.entry.restricted .entry-title{
+  opacity:0.7;
 }
 
 .entry.restricted:hover{
-  opacity:0.4;
+  opacity:0.45;
+}
+
+.archive-note{
+  font-size:12px;
+  opacity:0.55;
+  margin-top:30px;
+  line-height:1.6;
+}
+
+.archive-note a{
+  color:#000;
 }
 
 .block{
@@ -100,41 +125,8 @@ a:hover{
   opacity:0.75;
 }
 
-.archive-note{
-  font-size:12px;
-  opacity:0.55;
-  margin-top:30px;
-  line-height:1.6;
-}
-
-.archive-note a{
-  color:#000;
-  text-decoration:none;
-}
-
-.hr{
-  height:1px;
-  background:#000;
-  opacity:0.15;
-  margin:30px 0;
-}
-
-.button{
-  display:inline-block;
-  padding: var(--btn-pad-y) var(--btn-pad-x);
-  border:1px solid #000;
-  text-decoration:none;
-  color:#000;
-  letter-spacing:0.5px;
-}
-
-.button:hover{
-  background:#000;
-  color:#fff;
-  opacity:1;
-}
-
 /* MOBILE */
+
 @media (max-width:700px){
 
   :root{
@@ -142,8 +134,7 @@ a:hover{
     --margin: 22px;
     --maxw: 640px;
     --line: 1.8;
-    --btn-pad-y: 11px;
-    --btn-pad-x: 18px;
+
     --entry-col-1: 58px;
     --entry-col-3: 46px;
     --entry-gap: 12px;
@@ -192,4 +183,5 @@ a:hover{
   .archive-note{
     font-size:11px;
   }
+
 }
