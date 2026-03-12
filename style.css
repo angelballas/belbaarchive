@@ -291,3 +291,45 @@ a:hover{
 .entry-title a:hover::after{
   opacity:1;
 }
+.entry{
+  transition:opacity 0.15s ease;
+}
+
+.entry:hover{
+  opacity:1;
+}
+
+.entries:hover .entry{
+  opacity:0.35;
+}
+
+.entries:hover .entry:hover{
+  opacity:1;
+}
+
+.entry-title{
+  white-space:nowrap;
+}
+
+.entries{
+  width:100%;
+}
+
+.entry{
+  display:grid;
+  grid-template-columns:80px 1fr 80px;
+  align-items:baseline;
+  margin-bottom:18px;
+}
+
+.entry-number{
+  text-align:left;
+}
+
+.entry-title{
+  white-space:nowrap;
+}
+
+.entry-year{
+  text-align:right;
+}
