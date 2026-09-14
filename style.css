@@ -270,3 +270,9 @@ a:hover{
     margin:22px 0;
   }
 }
+
+/* Semantic page headings retain the archive typography. */
+h1{
+  font:inherit;
+  margin:0;
+}
