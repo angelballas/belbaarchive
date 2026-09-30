@@ -276,3 +276,31 @@ h1{
   font:inherit;
   margin:0;
 }
+
+/* HOME — TINY MITE */
+
+.mite-walker{
+  position:fixed;
+  top:0;
+  left:0;
+  width:20px;
+  height:auto;
+  z-index:2;
+  pointer-events:none;
+  user-select:none;
+  opacity:0;
+  transform-origin:50% 50%;
+  will-change:transform, opacity;
+}
+
+@media (max-width:700px){
+  .mite-walker{
+    width:17px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .mite-walker{
+    display:none;
+  }
+}
