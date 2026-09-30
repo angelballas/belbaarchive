@@ -54,6 +54,9 @@
   }
 
   const start = firstPosition();
+  const basePixelRatio = Number.isFinite(stored?.basePixelRatio)
+    ? stored.basePixelRatio
+    : (window.devicePixelRatio || 1);
   let x = Number.isFinite(stored?.x) ? clamp(stored.x, margin, maxX()) : start.x;
   let y = Number.isFinite(stored?.y) ? clamp(stored.y, margin, maxY()) : start.y;
   let angle = Number.isFinite(stored?.angle) ? stored.angle : random(-Math.PI, Math.PI);
@@ -77,7 +80,8 @@
         angle,
         targetAngle,
         speed,
-        targetSpeed
+        targetSpeed,
+        basePixelRatio
       }));
     } catch (_error) {
       // The animation still works when storage is unavailable.
@@ -86,7 +90,11 @@
 
   function render() {
     const rotation = (angle * 180) / Math.PI + 90;
-    mite.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg)`;
+    const viewportScale = window.visualViewport?.scale || 1;
+    const browserScale = (window.devicePixelRatio || 1) / basePixelRatio;
+    const zoomCompensation = 1 / (viewportScale * browserScale);
+
+    mite.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg) scale(${zoomCompensation})`;
     mite.style.opacity = "0.82";
   }
 
@@ -150,6 +158,11 @@
     render();
     saveState();
   });
+
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", render);
+    window.visualViewport.addEventListener("scroll", render);
+  }
 
   window.addEventListener("pagehide", () => {
     saveState();
